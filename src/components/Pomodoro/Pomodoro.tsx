@@ -123,7 +123,7 @@ export default function Pomodoro() {
                 />
                 {selectedPreset && (
                     <p style={{ marginTop: "16px", textAlign: "center" }}>
-                        Preset seleccionado: <strong>{selectedPreset}</strong>
+                        Current active preset: <strong>{selectedPreset}</strong>
                     </p>
                 )}
             </div>
