@@ -120,7 +120,6 @@ export default function Pomodoro() {
                     setSelectedPreset={setSelectedPreset}
                     handleTimeConfiguration={handleTimeConfiguration}
                     presets={presets}
-                    selectedPreset={selectedPreset}
                 />
             </div>
         </main>
