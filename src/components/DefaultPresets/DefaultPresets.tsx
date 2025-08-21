@@ -12,10 +12,12 @@ function DefaultPresets({
     setSelectedPreset,
     handleTimeConfiguration,
     presets,
+    selectedPreset,
 }: {
     setSelectedPreset: (preset: string) => void;
     handleTimeConfiguration: (preset: string) => void;
     presets: Preset[];
+    selectedPreset: string | null;
 }) {
     return (
         <div className="default-presets-container">
@@ -25,7 +27,9 @@ function DefaultPresets({
                     <div className="preset-card" key={preset.id}>
                         <button
                             onClick={() => {
-                                setSelectedPreset(preset.name);
+                                setSelectedPreset({
+                                    selectedPreset:String preset.name,
+                                });
                                 handleTimeConfiguration(preset.name);
                             }}
                             style={{ cursor: "pointer" }}
