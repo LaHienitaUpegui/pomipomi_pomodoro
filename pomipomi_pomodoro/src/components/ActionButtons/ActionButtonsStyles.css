@@ -1,0 +1,54 @@
+/** ----Section of the action buttons of the app ----*/
+.action-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.action-buttons-container button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: white;
+    padding: 8px 28px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.action-button.active {
+    background: #fc9f5b;
+    color: #ffffff;
+}
+
+.action-button.active:hover {
+    background: #e59153;
+}
+
+.action-button.notActive {
+    background: #00a991;
+    color: #fff;
+}
+
+.action-button.notActive:hover {
+    background: #008774;
+}
+
+.action-button.reset {
+    background: #832232;
+    color: #fff;
+}
+
+.action-button.reset:hover {
+    background: #5d1824;
+}
+
+.action-button img {
+    filter: brightness(0) invert(1);
+}

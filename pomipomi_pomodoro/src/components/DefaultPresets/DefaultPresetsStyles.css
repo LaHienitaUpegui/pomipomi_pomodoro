@@ -1,0 +1,66 @@
+/** ----Section of default presets---- */
+.default-presets-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+}
+
+.preset-cards-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.title-of-presets {
+    font-size: 32px;
+    font-weight: 700;
+    color: #00a991;
+}
+
+.preset-card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px;
+    background: #e6f6f4;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    &:hover {
+        background: #00a991;
+        &.preset-card button h3 {
+            transform: scale(1.1);
+            color: white;
+        }
+        &.preset-card button p {
+            color: white;
+        }
+    }
+}
+
+.preset-card button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border: none;
+    gap: 16px;
+    transition: background 0.3s ease;
+}
+
+.preset-card button h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #00a991;
+    transition: transform 0.3s ease;
+}
+
+.preset-card button p {
+    font-size: 16px;
+    color: #3d3d3d;
+}
