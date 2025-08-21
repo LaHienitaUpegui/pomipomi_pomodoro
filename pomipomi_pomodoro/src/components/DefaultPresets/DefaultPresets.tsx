@@ -1,48 +1,52 @@
-function DefaultPresets() {
-    const presets = [
-        {
-            id: 1,
-            name: "Short focus",
-            focusTime: 15,
-            shortBreak: 5,
-            longBreak: 20,
-        },
-        {
-            id: 2,
-            name: "Medium focus",
-            focusTime: 25,
-            shortBreak: 5,
-            longBreak: 20,
-        },
-        {
-            id: 3,
-            name: "Long focus",
-            focusTime: 40,
-            shortBreak: 5,
-            longBreak: 30,
-        },
-    ];
+import "./DefaultPresetsStyles.css";
 
+type Preset = {
+    id: string | number;
+    name: string;
+    focusTime: number;
+    shortBreak: number;
+    longBreak: number;
+};
+
+function DefaultPresets({
+    setSelectedPreset,
+    handleTimeConfiguration,
+    presets,
+}: {
+    setSelectedPreset: (preset: string) => void;
+    handleTimeConfiguration: (preset: string) => void;
+    presets: Preset[];
+}) {
     return (
-        <div className="default-presets">
-            <h2>Default presets</h2>
-            {presets.map((preset) => (
-                <div className="preset-card" key={preset.id}>
-                    <h3 className="preset-title">{preset.name}</h3>
-                    <p>
-                        <strong>Focus time: </strong>
-                        {preset.focusTime} minutes
-                    </p>
-                    <p>
-                        <strong>Short break: </strong>
-                        {preset.shortBreak} minutes
-                    </p>
-                    <p>
-                        <strong>Long break: </strong>
-                        {preset.longBreak} minutes
-                    </p>
-                </div>
-            ))}
+        <div className="default-presets-container">
+            <h2 className="title-of-presets">Default presets</h2>
+            <div className="preset-cards-container">
+                {presets.map((preset) => (
+                    <div className="preset-card" key={preset.id}>
+                        <button
+                            onClick={() => {
+                                setSelectedPreset(preset.name);
+                                handleTimeConfiguration(preset.name);
+                            }}
+                            style={{ cursor: "pointer" }}
+                        >
+                            <h3 className="preset-title">{preset.name}</h3>
+                            <p>
+                                <strong>Focus time: </strong>
+                                {Math.floor(preset.focusTime / 60)} minutes
+                            </p>
+                            <p>
+                                <strong>Short break: </strong>
+                                {Math.floor(preset.shortBreak / 60)} minutes
+                            </p>
+                            <p>
+                                <strong>Long break: </strong>
+                                {Math.floor(preset.longBreak / 60)} minutes
+                            </p>
+                        </button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
