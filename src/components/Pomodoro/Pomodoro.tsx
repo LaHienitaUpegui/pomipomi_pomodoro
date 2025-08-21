@@ -121,6 +121,11 @@ export default function Pomodoro() {
                     handleTimeConfiguration={handleTimeConfiguration}
                     presets={presets}
                 />
+                {selectedPreset && (
+                    <p style={{ marginTop: "16px", textAlign: "center" }}>
+                        Preset seleccionado: <strong>{selectedPreset}</strong>
+                    </p>
+                )}
             </div>
         </main>
     );
